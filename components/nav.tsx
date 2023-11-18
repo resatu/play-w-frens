@@ -1,12 +1,10 @@
-'use client'
-
 import { Button } from '@/components/ui/button'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 import { useAccount } from 'wagmi'
 import { disconnect } from '@wagmi/core'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 import Link from 'next/link'
-import { ModeToggle } from '@/components/dropdown'
 import { ChevronRight, Droplets, LogOut } from "lucide-react"
 
 export function Nav() {
@@ -15,49 +13,9 @@ export function Nav() {
   const pathname = usePathname()
 
   return (
-    <nav className='
-    border-b flex justify-items-center
-    flex-col sm:flex-row
-    items-center
-    sm:pr-10
-    '>
-      <div className='py-2.5 px-4 flex flex-1 items-center justify-center gap-x-[-8px] sm:justify-center'>
-        <Link href="/" className='mr-5 flex items-center'>
-          <Droplets className="opacity-85" size={19} />
-          <p className={`ml-2 mr-4 text-lg font-semibold`}>play with frens</p>
-        </Link>
-        {/*<Link href="/" className={`mr-5 text-sm ${pathname !== '/' && 'opacity-50'}`}>
-          <p>Home</p>
-        </Link>
-        <Link href="/search" className={`mr-5 text-sm ${pathname !== '/search' && 'opacity-60'}`}>
-          <p>Search</p>
-        </Link>
-        {
-          address && (
-            <Link href="/profile" className={`mr-5 text-sm ${pathname !== '/search' && 'opacity-60'}`}>
-              <p>Profile</p>
-            </Link>
-          )
-        }*/}
-      </div>
-      <div className='flex sm:items-center pl-8 pb-3 sm:p-0'>
-        {
-          !address && (
-            <Button onClick={() => open()} variant="secondary" className="mr-4">
-              Connect Wallet
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          )
-        }
-        {
-          address && (
-            <Button onClick={disconnect} variant="secondary" className="mr-4">
-              Disconnect
-              <LogOut className="h-4 w-4 ml-3" />
-            </Button>
-          )
-        }
-      </div>
-    </nav>
+    <div className='logo'>
+      <div className='logoImage'><Image src="/pwf-logo-2x.png" alt="Logo" width={88} height={48} /></div>
+      <div className='logoText'>play with frens</div>
+    </div>
   )
 }
