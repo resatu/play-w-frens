@@ -7,7 +7,7 @@ import {
 
 import {
 } from '@lens-protocol/widgets-react'
-import JoinCard from '@/components/joinCard'
+import JoinCard from '@/components/JoinCard'
 
 //   /* Optional parameters */
 //   profileId: string
