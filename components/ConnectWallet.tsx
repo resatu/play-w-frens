@@ -4,15 +4,22 @@ import { Button } from '@/components/ui/button'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 import { useAccount } from 'wagmi'
 import { disconnect } from '@wagmi/core'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { ChevronRight, Droplets, LogOut } from "lucide-react"
+import { useEffect } from 'react'
 
 
 export function ConnectWallet() {
-
+    const router = useRouter();
     const { open } = useWeb3Modal()
     const { address } = useAccount()
     const pathname = usePathname()
+
+    useEffect(() => {
+        if (address) {
+            router.push('/gaming-area');
+        }
+    }, [address, router]);
 
     return (
         <div className='
