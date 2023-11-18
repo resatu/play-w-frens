@@ -16,19 +16,17 @@ export function Nav() {
 
   return (
     <nav className='
-    border-b flex
+    border-b flex justify-items-center
     flex-col sm:flex-row
-    items-start sm:items-center
+    items-center
     sm:pr-10
     '>
-      <div
-        className='py-3 px-8 flex flex-1 items-center p'
-      >
+      <div className='py-2.5 px-4 flex flex-1 items-center justify-center gap-x-[-8px] sm:justify-center'>
         <Link href="/" className='mr-5 flex items-center'>
           <Droplets className="opacity-85" size={19} />
-          <p className={`ml-2 mr-4 text-lg font-semibold`}>lenscn</p>
+          <p className={`ml-2 mr-4 text-lg font-semibold`}>play with frens</p>
         </Link>
-        <Link href="/" className={`mr-5 text-sm ${pathname !== '/' && 'opacity-50'}`}>
+        {/*<Link href="/" className={`mr-5 text-sm ${pathname !== '/' && 'opacity-50'}`}>
           <p>Home</p>
         </Link>
         <Link href="/search" className={`mr-5 text-sm ${pathname !== '/search' && 'opacity-60'}`}>
@@ -40,31 +38,25 @@ export function Nav() {
               <p>Profile</p>
             </Link>
           )
-        }
+        }*/}
       </div>
-      <div className='
-        flex
-        sm:items-center
-        pl-8 pb-3 sm:p-0
-      '>
+      <div className='flex sm:items-center pl-8 pb-3 sm:p-0'>
         {
           !address && (
             <Button onClick={() => open()} variant="secondary" className="mr-4">
-          Connect Wallet
-          <ChevronRight className="h-4 w-4" />
-        </Button>
+              Connect Wallet
+              <ChevronRight className="h-4 w-4" />
+            </Button>
           )
         }
         {
           address && (
             <Button onClick={disconnect} variant="secondary" className="mr-4">
-            Disconnect
-            <LogOut className="h-4 w-4 ml-3" />
-          </Button>
+              Disconnect
+              <LogOut className="h-4 w-4 ml-3" />
+            </Button>
           )
         }
-        
-        <ModeToggle />
       </div>
     </nav>
   )
