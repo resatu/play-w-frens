@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "nodemon": "nodemon next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@lens-protocol/client": "^2.0.0-alpha.21",
     "@lens-protocol/metadata": "^1.0.5",
     "@lens-protocol/react-web": "^2.0.0-alpha.19",
     "@lens-protocol/wagmi": "^3.0.0-alpha.16",
@@ -40,5 +42,8 @@
     "typescript": "5.1.6",
     "viem": "^1.19.1",
     "wagmi": "^1.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }

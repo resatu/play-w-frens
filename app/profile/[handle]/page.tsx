@@ -28,3 +28,7 @@ import { Publications } from '@lens-protocol/widgets-react'
 //     </div>
 //   )
 // }
+
+export default function ProfileComponent() {
+    
+}
