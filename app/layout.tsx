@@ -1,14 +1,12 @@
 'use client'
 
 import './globals.css'
-import { Inter } from 'next/font/google'
-import { Web3ModalProvider } from "@/components/web3modal-provider"
-import { ThemeProvider } from "@/components/theme-provider"
-import { LensProvider } from "@/components/lens-provider"
-import { Nav } from "@/components/nav"
+import { Web3ModalProvider } from "../components/Web3modal-provider"
+import { ThemeProvider } from "../components/Theme-provider"
+import { LensProvider } from "../components/Lens-provider"
+import { Nav } from "../components/Nav"
 import React from 'react'
-import Footer from '@/components/footer'
-const inter = Inter({ subsets: ['latin'] })
+import Footer from '../components/Footer'
 
 export default function RootLayout({ children }) {
   return (
@@ -23,7 +21,7 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="/images/icons/iconmain-512x512.png" />
       <meta name="theme-color" content="#000000" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-      <body className={inter.className}>
+      <body className='landing'>
         <React.Fragment>
           <Web3ModalProvider>
             <LensProvider>

@@ -7,8 +7,7 @@ import {
 
 import {
 } from '@lens-protocol/widgets-react'
-
-
+import JoinCard from '@/components/joinCard'
 
 //   /* Optional parameters */
 //   profileId: string
@@ -17,15 +16,13 @@ import {
 
 const Index = () => {
     return (
-        <div>
+        <div className='landing'>
+            <JoinCard />
         </div>
     )
 }
 
 export default Index
-
-
-
 
 //   /* Optional parameters */
 //   profileId: string

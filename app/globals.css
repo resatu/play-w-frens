@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -25,7 +25,7 @@
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -53,7 +53,48 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.logo {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 10px 16px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 40px;
+  background: #000;
+  max-width: 292px;
+}
+
+.logoImage {
+  width: 88px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space;
+  display: flex;
+  padding-top: 72px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: #F0D5D3;
 }
