@@ -13,7 +13,6 @@ export function ConnectWallet() {
     const router = useRouter();
     const { open } = useWeb3Modal()
     const { address } = useAccount()
-    const pathname = usePathname()
 
     useEffect(() => {
         if (address) {

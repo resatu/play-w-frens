@@ -1,8 +1,11 @@
+import GamingCard from '@/components/GamingCard'
 import React from 'react'
 
 const GamingArea = () => {
     return (
-        <div>GamingArea</div>
+        <div>
+            <GamingCard />
+        </div>
     )
 }
 
