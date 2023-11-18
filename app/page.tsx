@@ -1,12 +1,10 @@
 'use client'
 
 import React from 'react'
-import {
-    ProfileListItem, Publications, Theme
-} from '@lens-protocol/widgets-react'
 
-import {
-} from '@lens-protocol/widgets-react'
+// import {
+//     ProfileListItem, Publications, Theme
+// } from '@lens-protocol/widgets-react'
 import JoinCard from '@/components/JoinCard'
 
 //   /* Optional parameters */
