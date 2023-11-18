@@ -1,12 +1,12 @@
 'use client'
 
 import './globals.css'
-import { Web3ModalProvider } from "../components/Web3modal-provider"
-import { ThemeProvider } from "../components/Theme-provider"
-import { LensProvider } from "../components/Lens-provider"
-import { Nav } from "../components/Nav"
+import { Web3ModalProvider } from "../components/web3modal-provider"
+import { ThemeProvider } from "../components/theme-provider"
+import { LensProvider } from "../components/lens-provider"
+import { Nav } from "../components/nav"
 import React from 'react'
-import Footer from '../components/Footer'
+import Footer from '../components/footer'
 
 export default function RootLayout({ children }) {
   return (
