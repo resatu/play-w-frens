@@ -1,12 +1,11 @@
-'use client'
-import { Publications } from '@lens-protocol/widgets-react'
+import React from 'react'
 
-export default function Home() {
-  return (
-    <div>
-      <Publications 
-        handle='christina'
-      />
-    </div>
-  )
+const Index = () => {
+    return (
+        <div className="flex justify-center items-center h-screen">
+            <h1 style={{ fontSize: '2em', color: 'var(--primary)' }}>Index</h1>
+        </div>
+    )
 }
+
+export default Index
