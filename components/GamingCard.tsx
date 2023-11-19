@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { getLensProfile } from './Nav';
+import { getLensProfile } from './nav';
 import GameWidget from './GameWidget';
 
 import { ethers } from 'ethers';
