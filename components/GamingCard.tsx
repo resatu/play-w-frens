@@ -1,36 +1,27 @@
+'use client';
+
 import Image from 'next/image'
-import React from 'react'
-import { getLensProfile } from './nav';
 import GameWidget from './GameWidget';
+import {
+    useExploreProfiles, Profile
+} from '@lens-protocol/react-web';
 
-import { ethers } from 'ethers';
-import { Comment } from '@lens-protocol/react-web';
+import { POST } from '../app/api/game/getGameRooms/route'
+const response: any = await POST(new Request(''));
+const address = response.winner
+const score = response.score
 
-// Function to call when alert is triggered
-// const handleAlertTrigger = async () => {
-//   // Use the private key from environment variables
-//   const privateKey = process.env.NEXT_PUBLIC_LENS_PRIVATE_KEY;
-//   const wallet = new ethers.Wallet(privateKey);
-
-//   // Define the publication content and metadata
-//   const publicationData = async () => {
-//     const res = await fetch
-//   };
-
-//   try {
-//     await createPublication(wallet, publicationData);
-//   } catch (error) {
-//     console.error("Error creating publication:", error);
-//   }
-// };
-
-
-
-const JoinCard = () => {
+export default function JoinCard() {
+    const {
+        data, error, loading
+    } = useExploreProfiles()
 
     return (
         <div className='gamingCard'>
             <div className='leaderboard'>
+                <h1>Leader of the week</h1>
+                {address}
+                {score}
             </div>
             <div className='game'>
                 <GameWidget />
@@ -39,6 +30,3 @@ const JoinCard = () => {
     )
 }
 
-
-
-export default JoinCard
