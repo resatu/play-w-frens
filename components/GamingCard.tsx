@@ -1,24 +1,26 @@
 import Image from 'next/image'
 import React from 'react'
+import { getLensProfile } from './Nav';
+import X2048 from './X2048';
 
 const JoinCard = () => {
-    return (
-        <div className='card'>
-            <div className='leaderboard'>
-                <div className='profilePic'>
-                    <Image src="/pp-dummy-2x.png" alt="profile-picture" width={200} height={200} />
-                </div>
-                <div className='profileHandle'>@aysipixie.lens</div>
-            </div>
-            <div className='connectCTA'>
+    getServerSideProps: async (context) => {
+        const { address } = context.query;
+        const profile = await getLensProfile(address);
+        return {
+            props: {
+                profile,
 
-                <div className='cardTextGroup'>
-                    <div className='cardIcon'>
-                        <Image src="/joincard-icon.png" alt="join-the-group-icon" width={48} height={48} />
-                    </div>
-                    <div className='cardTitle'>Sign up with your Lens profile to join the group</div>
-                    <div className='cardSubtitle'>aysipixie.lens sent your invitation for joining at <span>@2048gameclub</span></div>
-                </div>
+            }
+        }
+    }
+    return (
+        <div className='gamingCard'>
+            <div className='leaderboard'>
+            </div>
+            <div className='game'>
+                {/* <div className='gameTitle'>2048</div> */}
+                <div className='gameArena'><X2048 /></div>
             </div>
         </div>
     )
