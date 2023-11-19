@@ -1,8 +1,10 @@
 'use client'
 
+import { useState } from "react";
+import { InjectedConnector } from "wagmi/connectors/injected";
+import { useAccount } from "wagmi";
 import { Button } from '@/components/ui/button'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
-import { useAccount } from 'wagmi'
 import { disconnect } from '@wagmi/core'
 import { usePathname, useRouter } from 'next/navigation'
 import { ChevronRight, Droplets, LogOut } from "lucide-react"
