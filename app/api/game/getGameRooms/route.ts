@@ -10,14 +10,19 @@ const ERC20TransferABI = [{"inputs":[{"internalType":"contract IERC20","name":"_
 const contract = new Contract(ERC20TransferABI, "0x9459aCfdab5390A38656761a08aFa4ef4a0F6f00");
 
 
+(BigInt.prototype as any).toJSON = function () {
+  return this.toString();
+};
+
 export async function POST(request: Request) {
 
-  contract.setProvider(new Web3.providers.HttpProvider('https://polygon-rpc.com'))
+  contract.setProvider(new Web3.providers.HttpProvider('https://rpc.ankr.com/polygon_mumbai	'))
   //pwfContract.methods.getRoom.call(0);
-  const a = await contract.methods.getRoom().call({
+  const result: any[]
+   = await contract.methods.getRoom(0).call({
     value: "0",
-    from: '0x12364916b10Ae90076dDa6dE756EE1395BB69ec2',
-    gas: '30000',
+    from: '0x996cf6f143BcD9f2A9264d62A17eedfaFf460217',
+    gas: '40000',
   });
-  return new Response(JSON.stringify(a));
+  return new Response(JSON.stringify(result));
 }
