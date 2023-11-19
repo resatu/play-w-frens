@@ -7,7 +7,6 @@ import { LensProvider } from "../components/Lens-provider"
 import { Nav } from "../components/Nav"
 import React from 'react'
 import Footer from '../components/Footer'
-import { ThirdwebProvider, useSigner, useWallet } from "@thirdweb-dev/react";
 
 export default function RootLayout({ children }) {
   return (
@@ -24,15 +23,13 @@ export default function RootLayout({ children }) {
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       <body className='landing'>
         <Web3ModalProvider>
-          <ThirdwebProvider>
-            <LensProvider>
-              <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                <Nav />
-                {children}
-                <Footer />
-              </ThemeProvider>
-            </LensProvider>
-          </ThirdwebProvider>
+          <LensProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <Nav />
+              {children}
+              <Footer />
+            </ThemeProvider>
+          </LensProvider>
         </Web3ModalProvider>
       </body>
     </html>
